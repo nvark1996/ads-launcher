@@ -1,6 +1,15 @@
 # Ads Launcher
 
+**Go straight to any ad account, without the hassle of Meta Business Suite.**
+
+No more opening Business Suite, switching business portfolios, waiting for the account dropdown and scrolling for the right client. Ads Launcher takes you directly into the account you want in one step.
+
 A small Chrome extension for media buyers who manage many ad accounts. Click the toolbar icon (or press a shortcut), type a few letters of a client's name, press Enter, and that client's Ads Manager opens. You never have to search for the account again.
+
+| Without Ads Launcher | With Ads Launcher |
+|---|---|
+| Open Business Suite → switch business → open Ads Manager → open the account dropdown → scroll → pick the account | Press **Control+Shift+A** → type the client's name → **Enter** |
+| 30–60 seconds, every time | About 2 seconds |
 
 It works with **Meta Ads Manager**, **Google Ads** and **TikTok Ads Manager**, and with any other link you want to keep there.
 
