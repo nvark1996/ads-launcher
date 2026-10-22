@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <input id="q" type="search" placeholder="Search accounts…" autocomplete="off" autofocus>
+  <ul id="list"></ul>
+  <p id="empty" hidden>No accounts yet. Open an Ads Manager page and press “+ Add this page”.</p>
+  <form id="add" hidden>
+    <input id="addName" placeholder="Account name" required>
+    <input id="addGroup" placeholder="Group (optional)">
+    <div class="row"><button type="submit">Save</button><button type="button" id="addCancel" class="ghost">Cancel</button></div>
+  </form>
+  <footer>
+    <button id="addBtn">+ Add this page</button>
+    <button id="editBtn" class="ghost">Edit</button>
+  </footer>
+  <script src="my-links.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

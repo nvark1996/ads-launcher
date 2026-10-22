@@ -1,0 +1,75 @@
+# Ads Launcher
+
+A small Chrome extension for media buyers who manage many ad accounts. Click the toolbar icon (or press a shortcut), type a few letters of a client's name, press Enter, and that client's Ads Manager opens. You never have to search for the account again.
+
+It works with **Meta Ads Manager**, **Google Ads** and **TikTok Ads Manager**, and with any other link you want to keep there.
+
+## Features
+
+- **Search as you type:** filter accounts by name or group, then press **Enter** to open the top result. Use **↑ / ↓** to move through the list.
+- **One click to open:** a plain click opens the account in a new tab. **Cmd+click** (or Ctrl+click) opens it in the background and keeps the list open, so you can open several accounts at once.
+- **Keyboard shortcut:** **Control+Shift+A** on Mac, **Alt+Shift+A** on Windows and Linux. Change it at `chrome://extensions/shortcuts`.
+- **+ Add this page:** while you're on any account in Ads Manager, click it, type a name (and an optional group), and it's saved.
+- **Clean links:** for Meta Ads Manager links, only the account details (`act`, `business_id`, `global_scope_id`) are kept. Date ranges, session IDs and tracking parameters are dropped, so the account always opens on Ads Manager's normal date range rather than an old one you happened to copy.
+- **Groups:** give accounts a group (e.g. "Agency", "Freelance") and the list is split into sections.
+- **Platform badges:** Meta accounts get a blue **M**, Google a green **G**, TikTok a black **T**.
+- **Edit mode:** click **Edit** to show an × beside each account and remove it.
+- **Light and dark mode** follow your system setting.
+
+## Install
+
+The extension isn't in the Chrome Web Store, so you load it once from the folder.
+
+1. Download this repo: click **Code → Download ZIP** and unzip it, or run:
+   ```bash
+   git clone https://github.com/nvark1996/ads-launcher.git
+   ```
+2. Open `chrome://extensions` in Chrome.
+3. Turn on **Developer mode** (switch in the top-right corner).
+4. Click **Load unpacked** and select the `ads-launcher` folder.
+5. Click the puzzle-piece icon in Chrome's toolbar and **pin** Ads Launcher.
+
+It also works in other Chromium browsers, such as Edge, Brave and Arc.
+
+## Adding your accounts
+
+There are two ways. Use either or both.
+
+**1. From the popup (easiest).** Open an account in Ads Manager, click the Ads Launcher icon, click **+ Add this page**, type a name and click **Save**. These accounts are stored in your Chrome profile (`chrome.storage.sync`), so they follow you to other computers where you're signed into Chrome with sync on.
+
+**2. From a file (good for a long list).** Copy `my-links.example.js` to `my-links.js` and put your accounts in it:
+
+```js
+var MY_LINKS = [
+  { name: "Client A", url: "https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=1234567890&business_id=1234567890", group: "Agency" },
+  { name: "Client B", url: "https://ads.google.com/aw/overview?ocid=1234567890" },
+];
+```
+
+Then click the ↻ reload arrow on the Ads Launcher card in `chrome://extensions`.
+
+`my-links.js` is listed in `.gitignore`, so your account links are never committed if you fork or push this repo. If the file doesn't exist, the extension still works and the list starts empty. Chrome logs a harmless "file not found" message on the extension's error page in that case.
+
+**Where to find an account's link:** open the account in Ads Manager and copy the address from the address bar. For Meta, the part that matters is `act=` (the ad account ID) plus `business_id=`. Ads Launcher strips the rest when you use **+ Add this page**.
+
+## Privacy
+
+- No servers, analytics or tracking. The extension makes no network requests of its own.
+- It only opens the links you saved. It never reads your ads data, and it can't log in to or change your accounts.
+- Permissions:
+  - `storage` saves the accounts you add.
+  - `activeTab` reads the current tab's address, only when you click **+ Add this page**.
+
+## Files
+
+| File | What it does |
+|---|---|
+| `manifest.json` | Extension settings: name, icon, permissions, shortcut |
+| `popup.html` / `popup.css` / `popup.js` | The popup: search, list, add, edit |
+| `my-links.example.js` | Template for your private account list |
+| `my-links.js` | Your private account list (create it yourself; never committed) |
+| `icons/` | Toolbar icons |
+
+## License
+
+MIT. See [LICENSE](LICENSE).
