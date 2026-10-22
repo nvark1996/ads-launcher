@@ -4,6 +4,28 @@ A small Chrome extension for media buyers who manage many ad accounts. Click the
 
 It works with **Meta Ads Manager**, **Google Ads** and **TikTok Ads Manager**, and with any other link you want to keep there.
 
+## Why it matters
+
+If you run ads for many clients, getting to the right account is slower than it should be:
+
+- **Every client lives in a different place.** Each brand often has its own Business Manager (business portfolio), and Meta only opens an account directly when the link carries both the ad account ID and the business ID. Without the right link you go through Business Suite, the business switcher and the account switcher every time.
+- **The switchers are slow and crowded.** With 10, 20 or 50 accounts, the account dropdown means scrolling, waiting for it to load and squinting at similar names or long ID numbers.
+- **Bookmarks go stale.** A link copied from the address bar carries a fixed date range, a session ID and tracking parameters. Open it next month and you're looking at the wrong dates.
+- **Wrong-account mistakes are expensive.** When you jump between accounts all day, it's easy to edit a budget, duplicate a campaign or launch ads in the wrong account. Opening exactly the account you named every time removes that risk.
+- **It adds up.** Thirty seconds to a minute per account switch, dozens of times a day, is real time lost every week.
+
+Ads Launcher turns all of that into **two keystrokes**: open the popup, type the first letters of a client's name, press Enter, and you're in that client's campaigns.
+
+## Use cases
+
+- **Daily checks:** open every client's Ads Manager in the morning with Cmd+click, without hunting for each one.
+- **Agencies and freelancers:** keep agency clients and freelance clients apart with groups, and switch between them instantly.
+- **Client calls and meetings:** a client asks "how is the campaign doing?" and you have their account open in two seconds, not after a minute of clicking through switchers.
+- **Reporting days:** go through the accounts one by one in the order of your list, so none are missed.
+- **Multi-platform clients:** keep a client's Meta, Google Ads and TikTok accounts side by side under the same group.
+- **Team handover:** a new teammate can fill their own `my-links.js` from yours, so they reach every account on day one.
+- **Anything you open often:** Events Manager, billing pages, Business Settings, a client's reporting dashboard. Any link works.
+
 ## Features
 
 - **Search as you type:** filter accounts by name or group, then press **Enter** to open the top result. Use **↑ / ↓** to move through the list.
